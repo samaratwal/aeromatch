@@ -1726,6 +1726,31 @@ document.addEventListener('DOMContentLoaded', () => {
   initCanvas();
 });
 </script>
+<script>
+let tfModel = null;
+let labelMap = null;
+
+async function loadModel() {
+  try {
+    tfModel = await tf.loadLayersModel("model/model.json");
+
+    const resp = await fetch("model/label_map.json");
+    const raw = await resp.json();
+
+    labelMap = Object.fromEntries(
+      Object.entries(raw).map(([k, v]) => [v, k])
+    );
+
+    console.log("✅ Model loaded successfully");
+  } catch (e) {
+    console.error("❌ Model loading failed:", e);
+  }
+}
+
+window.onload = () => {
+  loadModel();
+};
+</script>
 
 </body>
 </html>
