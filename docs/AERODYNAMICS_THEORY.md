@@ -420,4 +420,4 @@ The scoring engine does not perform aerodynamic simulation — it matches agains
 
 ---
 
-*This document is part of the AeroMatch project — an AI-assisted airfoil selection and matching platform. For the full system documentation, see the [main README](../README.md).*
+*This document is part of the AeroMatch project — an AI-assisted airfoil selection and matching platform.
